@@ -1,0 +1,81 @@
+site_name: Cronjobly Docs
+site_url: https://docs.cronjobly.com
+site_description: Cronjobly is a dynamic content personalization platform that delivers tailored experiences to users based on real-time context and behavior.
+site_author: omegion
+
+edit_uri: https://github.com/cronjobly/docs/blob/main/docs/
+
+docs_dir: docs
+site_dir: site
+copyright: <script>document.write(new Date().getFullYear())</script> &copy; <a href="https://cronjobly.com" target="_blank">Cronjobly</a> &bull; Made with ❤️ in Berlin
+
+nav:
+  - Home: index.md
+
+
+theme:
+  name: material
+  logo: assets/img/logo.png
+  favicon: assets/favicons/favicon.ico
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.footer
+    - toc.follow
+    - content.tooltips
+    - search.suggest
+    - search.highlight
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cronjobly
+      name: Github Profile of Cronjobly
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-committers:
+      repository: cronjobly/docs
+      branch: main
+      token: !ENV ["GITHUB_TOKEN"]

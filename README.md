@@ -1,2 +1,2 @@
 # docs
-Cronjobly ublic Documentation
+Cronjobly Public Documentation
