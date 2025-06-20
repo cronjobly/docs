@@ -17,6 +17,7 @@ theme:
   name: material
   logo: assets/img/logo.png
   favicon: assets/favicons/favicon.ico
+  custom_dir: overrides
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -26,7 +27,9 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: amber
+      scheme: pink
+      primary: pink
+      accent: pink
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -34,19 +37,24 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: pink
+      accent: pink
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
 
   features:
+    - navigation.top
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.expand
     - navigation.footer
     - toc.follow
+    - toc.integrates
     - content.tooltips
     - search.suggest
     - search.highlight
+    - announce.dismiss
 extra_css:
   - stylesheets/extra.css
 
@@ -78,10 +86,12 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cronjobly
-      name: Github Profile of Cronjobly
+      name: Official Cronjobly GitHub Page
 markdown_extensions:
   - attr_list
   - md_in_html
+  - admonition
+  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
